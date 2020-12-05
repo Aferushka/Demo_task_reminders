@@ -24,7 +24,7 @@ services:
   celery-beat:
     build: ./reminders_back
     container_name: celery-beat
-    command: celery -A reminders_back beat -l info
+    command: celery -A reminders_back beat -l debug
     volumes:
       - ./reminders_back:/usr/src/app
     depends_on:
