@@ -30,7 +30,7 @@ services:
     depends_on:
       - reminders_back
       - redis
-      -celery
+      - celery
 
   redis:
     image: "redis:alpine"
