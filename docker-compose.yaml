@@ -21,6 +21,8 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    volumes:
+       postgres_data:/var/lib/postgresql/data/
 
   celery:
     build: ./reminders_back
@@ -56,3 +58,6 @@ services:
   redis:
     image: "redis:alpine"
     container_name: redis
+
+volumes:
+  postgres_data
