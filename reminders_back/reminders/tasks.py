@@ -2,7 +2,6 @@ from celery import shared_task
 from .models import Reminder, ChatId
 from datetime import datetime
 from .bot import bot
-from asgiref.sync import async_to_sync
 
 
 @shared_task
@@ -16,4 +15,4 @@ def reminder_scan():
 @shared_task
 def send_reminder(reminder):
     for chat in ChatId.objects.all():
-        async_to_sync(bot.send_message(chat_id=chat.chat_id, text=reminder.text))
+        bot.sendMessage(chat_id=chat.chat_id, text=reminder.text)

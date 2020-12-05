@@ -1,5 +1,4 @@
 from django.apps import AppConfig
-from .bot import Bot
 
 
 class RemindersConfig(AppConfig):
@@ -7,4 +6,3 @@ class RemindersConfig(AppConfig):
 
     def ready(self):
         import reminders.signals
-        Bot().start()
