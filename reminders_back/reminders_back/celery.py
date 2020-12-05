@@ -10,13 +10,9 @@ app.autodiscover_tasks()
 
 app.conf.beat_schedule = {
     'test_task_10_sec': {
-        'task': 'try_task',
+        'task': 'reminder.tasks.try_task',
         'schedule': 5.0,
         'args': ()
     }
 }
 
-
-@app.task
-def try_task():
-    print('Its working!')
