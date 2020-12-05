@@ -22,7 +22,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
-       postgres_data:/var/lib/postgresql/data/
+       - postgres_data:/var/lib/postgresql/data/
 
   celery:
     build: ./reminders_back
