@@ -11,7 +11,8 @@ COPY . .
 
 RUN chmod -R 777 /code && \
     pip3 install --no-cache-dir -r requirements.txt && \
-    python3 manage.py collectstatic --no-input
+    python3 manage.py collectstatic --no-input && \
+    echo "Europe/Moscow" > /etc/timezone
 
 ENV DJANGO_SETTINGS_MODULE reminders_back.settings
 
