@@ -10,6 +10,7 @@ services:
       - ./code/static:/code/static
     ports:
       - "8000:8000"
+      - "10112:10112"
 
   redis:
     image: "redis:alpine"
