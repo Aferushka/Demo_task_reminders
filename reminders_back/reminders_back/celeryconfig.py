@@ -1,7 +1,6 @@
 from __future__ import absolute_import
-from django.conf import settings
 
-BROKER_URL = settings.REDIS_URL
+BROKER_URL = 'redis://redis:6379/0'
 CELERY_RESULT_BACKEND = BROKER_URL
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
