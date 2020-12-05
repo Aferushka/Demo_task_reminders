@@ -19,5 +19,5 @@ class ChatId(models.Model):
     chat_id = models.IntegerField()
 
     def __str__(self):
-        return self.chat_id
+        return str(self.chat_id)
 
