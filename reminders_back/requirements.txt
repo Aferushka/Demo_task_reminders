@@ -15,9 +15,9 @@ kombu==5.0.2
 prometheus-client==0.8.0
 prompt-toolkit==3.0.8
 pytz==2020.4
+redis==3.5.3
 six==1.15.0
 sqlparse==0.4.1
-supervisor==4.2.1
 tornado==6.1
 vine==5.0.0
 wcwidth==0.2.5
