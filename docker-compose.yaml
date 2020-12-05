@@ -13,6 +13,7 @@ services:
 
   celery:
     build: ./reminders_back
+    container_name: celery
     command: celery -A reminders_back worker --loglevel=info
     volumes:
       - ./reminders_back:/usr/src/app
@@ -22,6 +23,7 @@ services:
 
   flower:
     build: ./reminders_back
+    container_name: flower
     command: flower -A reminders_back --port=10112 --broker=redis://redis:6379/0
     ports:
       - "10112:10112"
@@ -32,3 +34,4 @@ services:
 
   redis:
     image: "redis:alpine"
+    container_name: redis
