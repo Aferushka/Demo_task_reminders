@@ -1,10 +1,17 @@
 version: '3'
 services:
-  demo_back:
+  reminders_back:
     build: reminders_back/.
     container_name: reminders_back
+    depends_on:
+      - redis
     restart: always
     volumes:
       - ./code/static:/code/static
     ports:
       - "8000:8000"
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
