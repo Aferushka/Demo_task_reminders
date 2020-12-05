@@ -2,3 +2,4 @@
 /reminders_back/venv/
 /reminders_back/.idea/
 /reminders_back/db.sqlite
+/reminders_back/reminders/migrations/
