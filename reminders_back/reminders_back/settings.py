@@ -115,4 +115,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # REDIS
-REDIS_URL = 'redis://redis:6379/1'
+REDIS_URL = 'redis://redis:6379/0'
