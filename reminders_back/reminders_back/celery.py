@@ -10,7 +10,7 @@ app.autodiscover_tasks()
 
 app.conf.beat_schedule = {
     'test_task_10_sec': {
-        'task': 'reminders.tasks.remind_scan',
+        'task': 'reminders.tasks.reminder_scan',
         'schedule': 60.0,
         'args': ()
     }
