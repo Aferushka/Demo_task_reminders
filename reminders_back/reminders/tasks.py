@@ -18,6 +18,10 @@ def send_reminder(reminder_id):
         reminder = Reminder.objects.get(id=reminder_id)
     except:
         return
-
-    for chat in ChatId.objects.all():
-        bot.sendMessage(chat_id=chat.chat_id, text=reminder.text)
+    try:
+        for chat in ChatId.objects.all():
+            bot.sendMessage(chat_id=chat.chat_id, text=reminder.text)
+    except:
+        pass
+    finally:
+        reminder.delete()
