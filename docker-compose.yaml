@@ -21,6 +21,15 @@ services:
       - reminders_back
       - redis
 
+  celery-beat:
+    build: ./reminders_back
+    container_name: celery-beat
+    command: celery -A reminders_back beat -l info
+    volumes:
+      - ./reminders_back:/usr/src/app
+    depends_on:
+      - redis
+
   flower:
     build: ./reminders_back
     container_name: flower
@@ -31,6 +40,7 @@ services:
       - reminders_back
       - redis
       - celery
+      - celery-beat
 
   redis:
     image: "redis:alpine"
