@@ -12,7 +12,7 @@ RUN chmod -R 777 /code && \
     pip3 install --no-cache-dir -r requirements.txt && \
     python3 manage.py collectstatic --no-input
 
-ENV DJANGO_SETTINGS_MODULE demo_task_back.settings
+ENV DJANGO_SETTINGS_MODULE reminders_back.settings
 
 CMD bash -c "python3 manage.py makemigrations && \
              python3 manage.py migrate --skip-checks && \
