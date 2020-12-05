@@ -4,12 +4,23 @@ services:
     build: ./reminders_back
     container_name: reminders_back
     depends_on:
+      - postgres
       - redis
     restart: always
     volumes:
       - ./code/static:/code/static
+    environment:
+      - DJANGO_SETTINGS_MODULE=reminders_back.container_settings
     ports:
       - 8000:8000
+  
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
 
   celery:
     build: ./reminders_back
