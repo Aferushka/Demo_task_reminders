@@ -1,7 +1,7 @@
 version: '3'
 services:
   reminders_back:
-    build: reminders_back/.
+    build: ./reminders_back
     container_name: reminders_back
     depends_on:
       - redis
@@ -10,9 +10,15 @@ services:
       - ./code/static:/code/static
     ports:
       - "8000:8000"
-      - "10112:10112"
+
+  celery:
+    build: ./reminders_back
+    command: celery worker --app=reminders_back --loglevel=info
+    volumes:
+      - ./reminders_back:/usr/src/app
+    depends_on:
+      - reminders_back
+      - redis
 
   redis:
     image: "redis:alpine"
-    ports:
-      - "6379:6379"

@@ -17,5 +17,4 @@ ENV DJANGO_SETTINGS_MODULE reminders_back.settings
 
 CMD bash -c "python3 manage.py makemigrations && \
              python3 manage.py migrate --skip-checks && \
-             supervisord && \
              python3 manage.py runserver 0.0.0.0:8000"
