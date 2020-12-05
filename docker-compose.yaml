@@ -20,5 +20,15 @@ services:
       - reminders_back
       - redis
 
+  flower:
+    build: ./reminders_back
+    command: flower -A reminders_back --port=10112 --broker=redis://redis:6379/0
+    ports:
+      - "10112:10112"
+    depends_on:
+      - reminders_back
+      - redis
+      -celery
+
   redis:
     image: "redis:alpine"
