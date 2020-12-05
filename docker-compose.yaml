@@ -60,4 +60,4 @@ services:
     container_name: redis
 
 volumes:
-  postgres_data
+  postgres_data:
