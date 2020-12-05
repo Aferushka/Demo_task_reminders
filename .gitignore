@@ -1,0 +1,5 @@
+# DJANGO
+/reminders_back/venv/
+/reminders_back/.idea/
+/reminders_back/reminders/migrations/
+/reminders_back/db.sqlite3
