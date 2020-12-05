@@ -1,0 +1,10 @@
+version: '3'
+services:
+  demo_back:
+    build: reminders_back/.
+    container_name: reminders_back
+    restart: always
+    volumes:
+      - ./code/static:/code/static
+    ports:
+      - "8000:8000"
