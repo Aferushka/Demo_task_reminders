@@ -9,7 +9,7 @@ export function createReminder(text, date, time) {
       date: date,
       time: time
     };
-    fetch(`http://localhost:8000/api/reminders/`, {
+    fetch(`http://` + process.env.REACT_APP_BACK_HOST + `:8000/api/reminders/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'

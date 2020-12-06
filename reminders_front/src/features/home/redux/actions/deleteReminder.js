@@ -1,5 +1,5 @@
 export function deleteReminder(id) {
-    fetch(`http://localhost:8000/api/reminders/` + id, {
+    fetch(`http://` + process.env.REACT_APP_BACK_HOST + `:8000/api/reminders/` + id, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'

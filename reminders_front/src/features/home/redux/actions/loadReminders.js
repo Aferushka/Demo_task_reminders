@@ -3,7 +3,7 @@ import {refreshReminders, setIsLoading} from '../actions';
 
 export function loadReminders() {
   return dispatch => {
-    fetch(`http://localhost:8000/api/reminders/`)
+    fetch(`http://` + process.env.REACT_APP_BACK_HOST + `:8000/api/reminders/`)
       .then(result => result.json())
       .then(reminders => {
         if (reminders.error) {
