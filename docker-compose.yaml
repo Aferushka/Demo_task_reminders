@@ -1,5 +1,16 @@
 version: '3'
 services:
+  reminders_front:
+    build: ./reminders_front
+    depends_on:
+      - reminders_back
+    container_name: reminders_front
+    restart: always
+    ports:
+      - "80:3100"
+    environment:
+      - REACT_APP_BACK_HOST=192.168.168
+
   reminders_back:
     build: ./reminders_back
     container_name: reminders_back
