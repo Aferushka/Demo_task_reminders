@@ -7,7 +7,7 @@ services:
     container_name: reminders_front
     restart: always
     ports:
-      - "80:3100"
+      - "90:3100"
     environment:
       - REACT_APP_BACK_HOST=192.168.168
 
