@@ -9,6 +9,7 @@ export function createReminder(text, date, time) {
       date: date,
       time: time
     };
+    console.log(reminder);
     fetch(`http://` + process.env.REACT_APP_BACK_HOST + `:8000/api/reminders/`, {
       method: 'POST',
       headers: {
@@ -18,6 +19,7 @@ export function createReminder(text, date, time) {
     })
       .then(result => result.json())
       .then(response => {
+        console.log(response);
         if (response.error) {
           throw (response.error);
         }

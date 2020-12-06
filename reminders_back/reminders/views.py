@@ -7,3 +7,6 @@ class ReminderViewSet(viewsets.ModelViewSet):
     queryset = Reminder.objects.all()
     serializer_class = ReminderSerializer
 
+
+    # def create(self, request, *args, **kwargs):
+    #     print(request)
