@@ -38,7 +38,7 @@ export function AddReminderDialog({ addDialogState, closeAddDialog, createRemind
   }
   const [text, setText] = useState(reminder !== null ? reminder.text : '');
   const [date, setDate] = useState(reminder !== null ? reminder.date : Date());
-  const [time, setTime] = useState(reminder !== null ? moment(reminder.time, 'HH:mm:ss') : Date());
+  const [time, setTime] = useState(reminder !== null ? moment(reminder.time, 'HH:mm') : Date());
 
   const changeDate = (date) => {
     setDate(date)
@@ -49,7 +49,7 @@ export function AddReminderDialog({ addDialogState, closeAddDialog, createRemind
   }
 
   const addReminder = () => {
-    createReminder(text, moment(date).format('YYYY-MM-DD'), moment(time, 'HH:mm:ss').format('hh:mm[:ss[.uuuuuu]]'));
+    createReminder(text, moment(date).format('YYYY-MM-DD'), moment(time, 'HH:mm').format('HH:mm'));
     while(isLoading) {};
     setText('');
     setDate(Date());
@@ -57,7 +57,8 @@ export function AddReminderDialog({ addDialogState, closeAddDialog, createRemind
   }
 
   const updReminder = () => {
-    updateReminder(reminder.id, text, moment(date).format('YYYY-MM-DD'), moment(time, 'HH:mm:ss').format('hh:mm[:ss[.uuuuuu]]'));
+    updateReminder(reminder.id, text, moment(date).format('YYYY-MM-DD'), moment(time, 'HH:mm').format('HH:mm'));
+    console.log(moment(time));
     while(isLoading) {};
     closeEditForm();
   }
