@@ -18,7 +18,7 @@ class ReminderList extends Component {
 
   componentDidMount() {
     const { loadReminders } = this.props;
-    this.interval = setInterval(() => loadReminders(), 1000);
+    this.interval = setInterval(() => loadReminders(), 100);
   }
 
   componentWillUnmount() {

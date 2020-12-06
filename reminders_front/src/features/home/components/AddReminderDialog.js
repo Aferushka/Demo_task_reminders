@@ -38,7 +38,7 @@ export function AddReminderDialog({ addDialogState, closeAddDialog, createRemind
   }
   const [text, setText] = useState(reminder !== null ? reminder.text : '');
   const [date, setDate] = useState(reminder !== null ? reminder.date : Date());
-  const [time, setTime] = useState(reminder !== null ? moment(reminder.time, 'HH:mm') : Date());
+  const [time, setTime] = useState(reminder !== null ? moment(reminder.time, 'HH:mm') : new Date(2020, 0, 1, 8));
 
   const changeDate = (date) => {
     setDate(date)
