@@ -3,3 +3,30 @@
 /reminders_back/.idea/
 /reminders_back/db.sqlite
 /reminders_back/reminders/migrations/
+
+#REACT
+reminders_front/.idea/
+# dependencies
+reminders_front/node_modules
+reminders_front/.pnp
+reminders_front/.pnp.js
+
+# testing
+reminders_front/coverage
+
+# production
+reminders_front/build
+
+# tmp
+reminders_front/tmp
+
+# misc
+reminders_front/.DS_Store
+reminders_front/.env.local
+reminders_front/.env.development.local
+reminders_front/.env.test.local
+reminders_front/.env.production.local
+
+reminders_front/npm-debug.log*
+reminders_front/yarn-debug.log*
+reminders_front/yarn-error.log*
